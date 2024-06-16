@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Car Search</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js">
+		import { Ripple, initMDB } from "mdb-ui-kit";
+		initMDB({ Ripple });
+		.search-bar .form-control {
+			  width: 630px;
+			  margin-bottom: 20px;
+			  margin-left: -115px;
+		}
+	</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+</head>
+<body>
+		<div class="jumbotron text-center">
+		    <h1>Car Search</h1>
+		</div>
+        <div class="container-fluid col-md-4 col-md-offset-4">
+	        <form th:action="@{/process-search}" th:object="${searchDto}" method="post" >
+		            <div class="form-group row">
+			            	<div class="form-outline" data-mdb-input-init>
+			                    <input type="search" id="searchText" th:field="*{searchText}" class="form-control rounded" required placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+			                </div>
+				            <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>Search</button>
+		            </div>
+	        </form>
+        </div>
+</body>
+</html>

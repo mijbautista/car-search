@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Car Search</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container text-center">
+        <div>
+            <h1>Car Search</h1>
+        </div>
+        <form th:action="@{/process-search}" th:object="${searchDto}"
+            method="post" style="max-width: 600px; margin: 0 auto;">
+	        <div class="m-3">
+	            <div class="form-group row">
+	                <label class="col-4 col-form-label">Search Term</label>
+	                <div class="col-8">
+	                    <input type="text" th:field="*{searchText}" class="form-control" required />
+	                </div>
+		            <div>
+		                <button type="submit" class="btn btn-primary">Search</button>
+		            </div>
+	            </div>
+	            <div class="form-group row">
+	                <div class="col-8">
+	                	<label for="searchAll" class="col-4 col-form-label">All</label>
+	                    <input type="checkbox" th:field="*{searchAll}" class="form-control" id="searchAll" />
+	                	<label for="searchName" class="col-4 col-form-label">All</label>
+	                    <input type="checkbox" th:field="*{searchName}" class="form-control" id="searchName" />
+	                	<label for="searchLength" class="col-4 col-form-label">All</label>
+	                    <input type="checkbox" th:field="*{searchLength}" class="form-control" id="searchLength" />
+	                	<label for="searchVelocity" class="col-4 col-form-label">All</label>
+	                    <input type="checkbox" th:field="*{searchVelocity}" class="form-control" id="searchVelocity" />
+	                	<label for="searchColor" class="col-4 col-form-label">All</label>
+	                    <input type="checkbox" th:field="*{searchColor}" class="form-control" id="searchColor" />
+	                </div>
+	            </div>
+	        </div>
+        </form>
+    </div>
+</body>
+</html>
