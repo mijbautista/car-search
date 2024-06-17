@@ -27,7 +27,7 @@ public class CarService {
 	}
 	
 	public List<Car> findCarsByLenghtWeightVelocity(String val) {
-		return repo.findByLengthOrWeightOrVelocity(val, val, val);
+		return repo.findByLengthOrWeightOrVelocity(val);
 	}
 
 }

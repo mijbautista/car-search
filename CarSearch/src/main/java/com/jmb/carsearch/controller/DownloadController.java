@@ -12,7 +12,7 @@ import com.jmb.carsearch.model.Car;
 @RestController
 public class DownloadController {
 	
-	@GetMapping(value = "/download", produces = {MediaType.TEXT_XML_VALUE})
+	@GetMapping(value = "/download", produces = {MediaType.APPLICATION_XML_VALUE})
 	public ResponseEntity<List<Car>> produceXML(List<Car> cars) {
 		return ResponseEntity.ok(cars);
 	}
